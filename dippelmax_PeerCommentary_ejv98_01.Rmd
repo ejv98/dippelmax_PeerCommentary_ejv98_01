@@ -1,0 +1,131 @@
+---
+title: "dippelmax_PeerCommentary_ejv98_01"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+title: "dippelm_OriginalHomeworkCode_01"
+author: "Max Dippel"
+date: "9/10/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Challenge 1
+```{r}
+# Challenge 1
+vector <- c("Stately, plump Buck Mulligan came from the stairhead, bearing a bowl of lather on which a mirror and a razor lay crossed.")
+vector
+# install.packages("stringr")
+library(stringr)
+split_vector <- str_split(vector, " ", n = Inf)
+split_vector[seq(1, length(split_vector), by = 3)]
+split_vector[seq(from = 1, length(split_vector), by = 5)]
+split_vector
+split_vector
+answer <- split_vector[seq(1, length(22), 6)]
+answer
+```
+
+### Could not get every third word
+
+#ejv98 Comment: I used a different method from the stringr method, but I think in order to get every third word, you need to put quotations around every single word individually. It would look like vector<-c("Stately","plump","Buck","Mulligan"...) and so on. 
+
+
+# Challenge 2
+```{r}
+# Challenge 2
+m <- matrix(data = 1:80, nrow = 8, ncol = 10, byrow = FALSE)
+m
+x <- m[4, 5]
+x
+c2 <- m[ , 2]
+c3 <- m[ , 3]
+c6 <- m[ , 6]
+x <- cbind(c2,c3,c6)
+x
+r6 <- m[6 , ]
+r8 <- m[8 , ]
+x <- cbind(r6,r8)
+x
+x <- m[2,2]:m[6,9]
+```
+
+#ejv98 Comments: I set mine up a little differently, but it runs well! 
+
+# Challenge 3
+```{r}
+# Challenge 3
+a <- array(data = 400:1, dim = c(5, 5, 4, 4))
+a
+a[1,1,1,2]
+a[2,3,2,]
+a[1:5, 1:5, 3, 3]
+```
+
+#ejv98 Comments: I set mine up the same way (I believe I missed a digit). Yours runs well.
+
+# Challenge 4
+```{r}
+Lemuroidea <- c("Cheirogaleidae", "Lepilemuridae", "Indriidae", "Lemuridae",
+    "Daubentoniidae")
+Lorisoidea <- c("Lorisidae", "Galagidae")
+Strepsirhini <- list(Lemuroidea, Lorisoidea)
+names(Strepsirhini) <- list("Lemuroidea", "Lorisoidea")
+Strepsirhini
+Platyrrhini <- c("Cebidae","Atelidae","Pitheciidae")
+Platyrrhini
+Catarrhini <- c("Cercopithecidae","Hylobatidae","Hominidae")
+Catarrhini
+Tarsioidea <- c("Tarsiidae")
+Anthropoidae <- list(Platyrrhini,Catarrhini)
+names(Anthropoidae) <- list("Platyrrhini","Catarrhini")
+Anthropoidae
+Haplorhini <- list(Anthropoidae, Tarsioidea)
+names(Haplorhini) <- list("Anthropoidae", "Tarsioidea")
+Haplorhini
+Primates <- list(Haplorhini,Strepsirhini)
+names(Primates) <- list("Haplorhini","Strepsirhini") 
+Primates
+```
+
+
+# Challenge 5
+```{r}
+m <- matrix(data = c(3, 0, 1, 23, 1, 2, 33, 1, 1, 42, 0, 1, 41, 0, 2), nrow = 5, ncol = 3, byrow = TRUE)
+m
+df <- data.frame(m)
+df
+new_df <- df[df$X2, ]
+new_df
+factor_df <- as.factor(df[df$X3, ])
+factor_df
+```
+
+#ejv98 Comment: The first part (identifying and running m) works well, but for defining df, mine looked a little different. I wrote it as df<-as.data.frame(m3) (or in your case, m rather than m3). 
